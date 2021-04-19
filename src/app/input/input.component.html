@@ -1,1 +1,13 @@
-<app-select></app-select>
+
+<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" [closeOthers]="true">
+    <ngb-panel title="Simple">
+      <ng-template ngbPanelContent>
+        <app-select [(data)] = "data[0]"></app-select>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="Simple">
+      <ng-template ngbPanelContent>
+        <app-select [(data)] = "data[1]"></app-select>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>

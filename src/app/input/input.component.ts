@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-input',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
+  data: number[];
 
-  constructor() { }
+  constructor(private dataService:DataService) { 
+    this.data = dataService.data;
+  }
 
   ngOnInit(): void {
   }

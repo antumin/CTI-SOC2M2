@@ -13,6 +13,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { SelectComponent } from './input/select/select.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     FormsModule,
     ReactiveFormsModule,
     NgApexchartsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

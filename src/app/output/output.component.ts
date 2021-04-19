@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApexChart, ApexFill, ApexLegend, ApexNonAxisChartSeries, ApexResponsive, ApexStroke, ChartComponent } from 'ng-apexcharts';
+import { DataService } from '../data.service';
 @Component({
   selector: 'app-output',
   templateUrl: './output.component.html',
@@ -7,15 +8,18 @@ import { ApexChart, ApexFill, ApexLegend, ApexNonAxisChartSeries, ApexResponsive
 })
 
 export class OutputComponent implements OnInit {
-  @ViewChild("chart") chart: ChartComponent = new ChartComponent;
+  @ViewChild("chart") chart: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
 
-  constructor() {
+  constructor(private dataService: DataService) {
     this.chartOptions = {
-      series: [14, 23, 21, 17, 15, 10, 12, 17, 21],
+      series: dataService.data,
       chart: {
         type: "polarArea",
-        width: "100%"
+        width: "100%",
+        animations: {
+          enabled: false
+        }
       },
       stroke: {
         colors: ["#fff"]
@@ -30,6 +34,14 @@ export class OutputComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.dataService.dataChange.subscribe((data)=>{
+      console.log("updating");
+      let values: number[] = [];
+      data.forEach((value)=>{
+        values.push(value);
+      })
+      this.chartOptions.series = values;
+    })
   }
 }
 
@@ -40,5 +52,5 @@ export type ChartOptions = {
   labels: any;
   stroke: ApexStroke;
   fill: ApexFill;
-  legend: ApexLegend,
+  legend: ApexLegend
 };

@@ -1,4 +1,4 @@
-<div id="chart">
+<div>
     <apx-chart
       [series]="chartOptions.series"
       [chart]="chartOptions.chart"
@@ -7,5 +7,6 @@
       [stroke]="chartOptions.stroke"
       [legend]="chartOptions.legend"
       [responsive]="chartOptions.responsive"
+      [yaxis] = "{tickAmount:5, min:5, max:5}"
     ></apx-chart>
   </div>

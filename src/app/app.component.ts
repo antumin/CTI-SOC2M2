@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  data = [1, 1];
   title = 'CTI-SOC2M2';
 }
