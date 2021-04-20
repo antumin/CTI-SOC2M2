@@ -12,6 +12,6 @@
       [labels]="chartOptions.labels"
       [xaxis]="chartOptions.xaxis"
     ></apx-chart>
-  </div>
-  <div class="maturityLevel">Maturity Score: {{dataService.maturity}}</div>
+  </div><br>
+  <div class="maturityLevel">Maturity Score: <b>{{dataService.maturity}}</b></div><br>
   <mat-progress-bar [value]="dataService.maturityLevel/dataService.maturityLevels.length*100"></mat-progress-bar>
