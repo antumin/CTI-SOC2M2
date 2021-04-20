@@ -1,4 +1,5 @@
 
+<div class="expandMenu"><a [routerLink]="" (click)="expandAll()">Expand All</a> / <a [routerLink]="" (click)="collapseAll()">Collapse All</a></div>
 <ngb-accordion #acc="ngbAccordion" [activeIds]="activeIds">
     <ngb-panel *ngFor="let capability of dataService.capabilities; let i = index" [title]="capability.name" [id]="'panel' + i" >
       <ng-template ngbPanelContent>

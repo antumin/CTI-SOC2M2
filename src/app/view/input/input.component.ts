@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { NgbAccordion } from '@ng-bootstrap/ng-bootstrap';
 import { DataService } from '../../model/data.service';
 
 @Component({
@@ -7,6 +8,7 @@ import { DataService } from '../../model/data.service';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
+  @ViewChild('acc') accordion: NgbAccordion;
   activeIds: string[] = []
 
   constructor(public dataService:DataService) { 
@@ -17,6 +19,14 @@ export class InputComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  public expandAll(): void {
+    this.accordion.expandAll();
+  }
+
+  public collapseAll(): void {
+    this.accordion.collapseAll();
   }
 
 }
