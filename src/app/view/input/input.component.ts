@@ -7,8 +7,13 @@ import { DataService } from '../../model/data.service';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
+  activeIds: string[] = []
 
   constructor(public dataService:DataService) { 
+    dataService.capabilities.forEach((capability, i) => {
+      this.activeIds.push("panel" + i);
+    });
+    console.log(this.activeIds);
   }
 
   ngOnInit(): void {

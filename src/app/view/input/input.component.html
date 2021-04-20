@@ -1,6 +1,6 @@
 
-<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" [closeOthers]="true">
-    <ngb-panel *ngFor="let capability of dataService.capabilities; let i = index" [title]="capability" >
+<ngb-accordion #acc="ngbAccordion" [activeIds]="activeIds">
+    <ngb-panel *ngFor="let capability of dataService.capabilities; let i = index" [title]="capability" [id]="'panel' + i" >
       <ng-template ngbPanelContent>
         <app-select [(data)] = "dataService.data[i]" [title]="capability"></app-select>
       </ng-template>
