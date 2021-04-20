@@ -1,10 +1,6 @@
 <mat-form-field appearance="fill">
-    <mat-label>Select me</mat-label>
-    <mat-select [(ngModel)]="data" (selectionChange)="onDataChange()">
-        <mat-option [value]="1">1</mat-option>
-        <mat-option [value]="2">2</mat-option>
-        <mat-option [value]="3">3</mat-option>
-        <mat-option [value]="4">4</mat-option>
-        <mat-option [value]="5">5</mat-option>
+    <mat-label>{{title}}</mat-label>
+    <mat-select [(ngModel)]="data" (selectionChange)="onDataChange()" >
+        <mat-option *ngFor="let option of dataService.dataLabels; let i = index" [value]="i">{{option}}</mat-option>
     </mat-select>
 </mat-form-field>

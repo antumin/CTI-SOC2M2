@@ -7,10 +7,8 @@ import { DataService } from '../../model/data.service';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
-  data: number[];
 
-  constructor(private dataService:DataService) { 
-    this.data = dataService.data;
+  constructor(public dataService:DataService) { 
   }
 
   ngOnInit(): void {

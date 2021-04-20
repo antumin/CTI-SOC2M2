@@ -16,6 +16,7 @@ export class OutputComponent implements OnInit {
     this.chartOptions = {
       series: dataService.data,
       colors: this.setColors(),
+      labels: this.dataService.capabilities,
       chart: {
         type: "polarArea",
         width: "100%",
@@ -45,8 +46,8 @@ export class OutputComponent implements OnInit {
       console.log("updating");
       let values: number[] = [];
       data.forEach((value)=>{
-        values.push(value);
-      })
+        values.push(value + 1);
+      });
       this.chartOptions.series = values;
       this.chartOptions.colors = this.setColors();
     })
@@ -55,7 +56,7 @@ export class OutputComponent implements OnInit {
   private setColors(): any[]{
     let colors:any[] = [];
     this.dataService.data.forEach((data, i) =>{
-      colors[i] = this.colorSteps[this.dataService.data[i]-1]
+      colors[i] = this.colorSteps[this.dataService.data[i]]
     });
     return colors;
   }
@@ -72,3 +73,4 @@ export type ChartOptions = {
   yaxis: ApexYAxis;
   colors: any[];
 };
+

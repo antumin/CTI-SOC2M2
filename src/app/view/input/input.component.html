@@ -1,13 +1,8 @@
 
 <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" [closeOthers]="true">
-    <ngb-panel title="Simple">
+    <ngb-panel *ngFor="let capability of dataService.capabilities; let i = index" [title]="capability" >
       <ng-template ngbPanelContent>
-        <app-select [(data)] = "data[0]"></app-select>
-      </ng-template>
-    </ngb-panel>
-    <ngb-panel title="Simple">
-      <ng-template ngbPanelContent>
-        <app-select [(data)] = "data[1]"></app-select>
+        <app-select [(data)] = "dataService.data[i]" [title]="capability"></app-select>
       </ng-template>
     </ngb-panel>
   </ngb-accordion>

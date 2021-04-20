@@ -8,9 +8,10 @@ import { DataService } from 'src/app/model/data.service';
 })
 export class SelectComponent implements OnInit {
   @Input()  data;
+  @Input()  title;
   @Output() dataChange = new EventEmitter<number>();
 
-  constructor(private dataService: DataService) { }
+  constructor(public dataService: DataService) { }
 
   ngOnInit(): void {
     console.log(this.data);
