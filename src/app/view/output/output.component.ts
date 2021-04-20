@@ -10,10 +10,9 @@ import { DataService } from '../../model/data.service';
 export class OutputComponent implements OnInit {
   @ViewChild("chart") chart: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
-  public colorSteps = ['#eb4034','#eb8f34','#dfeb34','#b4eb34','#3aeb34'];
   private labels = [];
 
-  constructor(private dataService: DataService) {
+  constructor(public dataService: DataService) {
     this.dataService.capabilities.forEach(capability =>{
       this.labels.push(capability.name);
     });
@@ -53,7 +52,7 @@ export class OutputComponent implements OnInit {
       console.log("updating");
       let values: number[] = [];
       data.forEach((value)=>{
-        values.push(value + 1);
+        values.push(value);
       });
       this.chartOptions.series = values;
       this.chartOptions.colors = this.setColors();
@@ -63,7 +62,7 @@ export class OutputComponent implements OnInit {
   private setColors(): any[]{
     let colors:any[] = [];
     this.dataService.data.forEach((data, i) =>{
-      colors[i] = this.colorSteps[this.dataService.data[i]]
+      colors[i] = this.dataService.levels[data].color;
     });
     return colors;
   }

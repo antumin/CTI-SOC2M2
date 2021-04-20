@@ -20,21 +20,46 @@ export const capabilities = [
     }
 ]
 
-export const levels = [
+export const capabilityLevels = [
     {
+        name: 'Undefined',
+        explanation: '',
+        color: '#eb4034'
+    },{
         name: 'Source',
-        explanation: 'Have you determined and assessed the source of CTI with the mentioned CTI format(s)?'
+        explanation: 'Have you determined and assessed the source of CTI with the mentioned CTI format(s)?',
+        color: '#eb4034'
     },{
         name: 'Quality',
-        explanation: 'Have you applied appropriate measures to assess the quality of the CTI structured with the mentioned CTI format(s)?'
+        explanation: 'Have you applied appropriate measures to assess the quality of the CTI structured with the mentioned CTI format(s)?',
+        color: '#eb8f34'
     },{
         name: 'Integration',
-        explanation: 'Have you integrated the CTI and the mentioned CTI format(s) into your organizational processes and technology architecture?'
+        explanation: 'Have you integrated the CTI and the mentioned CTI format(s) into your organizational processes and technology architecture?',
+        color: '#dfeb34'
     },{
         name: 'Automation',
-        explanation: 'Have you automated retrieval, use and dissemination of CTI based on the mentioned CTI format(s)?'
+        explanation: 'Have you automated retrieval, use and dissemination of CTI based on the mentioned CTI format(s)?',
+        color: '#b4eb34'
     },{
         name: 'Improvement',
-        explanation: 'Have you set-up a continuous improvement mechanism to cope with new developments within CTI and new CTI format(s)?'
+        explanation: 'Have you set-up a continuous improvement mechanism to cope with new developments within CTI and new CTI format(s)?',
+        color: '#3aeb34'
     },
+]
+
+export const maturityLevels = [
+    {
+        name: 'Initial',
+        explanation: ''
+    },{
+        name: 'Core',
+        explanation: ''
+    },{
+        name: 'Extended',
+        explanation: ''
+    },{
+        name: 'Proficient',
+        explanation: ''
+    }
 ]
