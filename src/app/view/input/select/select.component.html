@@ -1,6 +1,6 @@
 <mat-form-field appearance="fill">
     <mat-label>{{title}}</mat-label>
     <mat-select [(ngModel)]="data" (selectionChange)="onDataChange()" >
-        <mat-option *ngFor="let option of dataService.dataLabels; let i = index" [value]="i">{{option}}</mat-option>
+        <mat-option *ngFor="let option of dataService.levels; let i = index" [value]="i" [matTooltip]="option.explanation" matTooltipPosition="right">{{option.name}}</mat-option>
     </mat-select>
 </mat-form-field>

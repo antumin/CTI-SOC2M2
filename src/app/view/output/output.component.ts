@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ApexChart, ApexFill, ApexLegend, ApexNonAxisChartSeries, ApexResponsive, ApexStroke, ApexYAxis, ChartComponent } from 'ng-apexcharts';
+import { ApexChart, ApexFill, ApexLegend, ApexNonAxisChartSeries, ApexResponsive, ApexStroke, ApexXAxis, ApexYAxis, ChartComponent } from 'ng-apexcharts';
 import { DataService } from '../../model/data.service';
 @Component({
   selector: 'app-output',
@@ -11,12 +11,17 @@ export class OutputComponent implements OnInit {
   @ViewChild("chart") chart: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
   public colorSteps = ['#eb4034','#eb8f34','#dfeb34','#b4eb34','#3aeb34'];
+  private labels = [];
 
   constructor(private dataService: DataService) {
+    this.dataService.capabilities.forEach(capability =>{
+      this.labels.push(capability.name);
+    });
+
     this.chartOptions = {
       series: dataService.data,
       colors: this.setColors(),
-      labels: this.dataService.capabilities,
+      labels: this.labels,
       chart: {
         type: "polarArea",
         width: "100%",
@@ -36,7 +41,9 @@ export class OutputComponent implements OnInit {
       yaxis: {
         tickAmount:5,
         min:5,
-        max:5
+        max:5,
+      },
+      xaxis: {
       }
     };
   }
@@ -72,5 +79,6 @@ export type ChartOptions = {
   legend: ApexLegend;
   yaxis: ApexYAxis;
   colors: any[];
+  xaxis: ApexXAxis;
 };
 

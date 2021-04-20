@@ -1,29 +1,24 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { ChartComponent } from 'ng-apexcharts';
 import { BehaviorSubject } from 'rxjs';
+import { capabilities, levels } from './strings';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService{
+export class DataService {
   public data = [];
-  public capabilities = [
-    'Vulnerability Management', 
-    'Log and Event Management', 
-    'Security Monitoring, Analysis & Threat Detection', 
-    'Threat Hunting, Penetration Testing & Digital Forensics', 
-    'Security Incident Management & Incident Response', 
-    'Core Cyber Threat Intelligence'];
-  public dataLabels = ['Source', 'Quality', 'Integration', 'Automation', 'Improvement'];
+  public capabilities = capabilities;
+  public levels = levels;
   public dataChange = new BehaviorSubject(this.data);
-  
-  constructor() { 
+
+  constructor() {
     this.capabilities.forEach((capability, i) => {
       this.data[i] = 0;
     });
   }
 
-  public dataUpdated(): void{
+  public dataUpdated(): void {
     this.dataChange.next(this.data);
     console.log(this.data);
   }
