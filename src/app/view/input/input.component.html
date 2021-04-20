@@ -3,7 +3,7 @@
 <ngb-accordion #acc="ngbAccordion" [activeIds]="activeIds">
     <ngb-panel *ngFor="let capability of dataService.capabilities; let i = index" [title]="capability.name" [id]="'panel' + i" >
       <ng-template ngbPanelContent>
-        {{dataService.capabilities[i].explanation}}<br><br>
+        <div class="explanation">{{dataService.capabilities[i].explanation}}</div><br>
         <app-select [(data)] = "dataService.data[i]" [title]="capability.name"></app-select>
       </ng-template>
     </ngb-panel>
