@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ApexChart, ApexFill, ApexLegend, ApexNonAxisChartSeries, ApexResponsive, ApexStroke, ChartComponent } from 'ng-apexcharts';
+import { ApexChart, ApexFill, ApexLegend, ApexNonAxisChartSeries, ApexResponsive, ApexStroke, ApexYAxis, ChartComponent } from 'ng-apexcharts';
 import { DataService } from '../data.service';
 @Component({
   selector: 'app-output',
@@ -10,10 +10,12 @@ import { DataService } from '../data.service';
 export class OutputComponent implements OnInit {
   @ViewChild("chart") chart: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
+  public colorSteps = ['#eb4034','#eb8f34','#dfeb34','#b4eb34','#3aeb34'];
 
   constructor(private dataService: DataService) {
     this.chartOptions = {
       series: dataService.data,
+      colors: this.setColors(),
       chart: {
         type: "polarArea",
         width: "100%",
@@ -29,6 +31,11 @@ export class OutputComponent implements OnInit {
       },
       legend: {
         show: false
+      },
+      yaxis: {
+        tickAmount:5,
+        min:5,
+        max:5
       }
     };
   }
@@ -41,7 +48,16 @@ export class OutputComponent implements OnInit {
         values.push(value);
       })
       this.chartOptions.series = values;
+      this.chartOptions.colors = this.setColors();
     })
+  }
+
+  private setColors(): any[]{
+    let colors:any[] = [];
+    this.dataService.data.forEach((data, i) =>{
+      colors[i] = this.colorSteps[this.dataService.data[i]-1]
+    });
+    return colors;
   }
 }
 
@@ -52,5 +68,7 @@ export type ChartOptions = {
   labels: any;
   stroke: ApexStroke;
   fill: ApexFill;
-  legend: ApexLegend
+  legend: ApexLegend;
+  yaxis: ApexYAxis;
+  colors: any[];
 };
