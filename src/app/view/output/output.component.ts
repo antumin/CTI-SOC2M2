@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApexChart, ApexFill, ApexLegend, ApexNonAxisChartSeries, ApexResponsive, ApexStroke, ApexYAxis, ChartComponent } from 'ng-apexcharts';
-import { DataService } from '../data.service';
+import { DataService } from '../../model/data.service';
 @Component({
   selector: 'app-output',
   templateUrl: './output.component.html',
