@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "buid-ghpages": "ng build --prod --output-path docs --base-href /CTI-SOC2M2/"
+    "build-ghpages": "ng build --prod --output-path docs --base-href /CTI-SOC2M2/"
   },
   "private": true,
   "dependencies": {
