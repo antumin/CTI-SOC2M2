@@ -14,4 +14,4 @@
     ></apx-chart>
   </div><br>
   <div class="maturityLevel">Maturity Score: <b>{{dataService.maturity}}</b></div><br>
-  <mat-progress-bar [value]="dataService.maturityLevel/dataService.maturityLevels.length*100"></mat-progress-bar>
+  <mat-progress-bar [value]="dataService.maturityLevel/(dataService.maturityLevels.length-1)*100"></mat-progress-bar>
