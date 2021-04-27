@@ -98,7 +98,7 @@ export const maturityLevels = [
         explanation: '',
         kind: MaturityLevel.Extended
     },{
-        name: 'Proficient',
+        name: 'Visionary',
         explanation: '',
         kind: MaturityLevel.Visionary
     }
