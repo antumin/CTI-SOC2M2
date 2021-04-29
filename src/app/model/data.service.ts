@@ -25,7 +25,6 @@ export class DataService {
     this.dataChange.next(this.data);
     this.maturityLevel = this.calculateMaturity(this.data);
     this.maturity = maturityLevels[Math.round(this.maturityLevel)].name;
-    console.log(this.maturityLevel)
   }
 
   private calculateMaturity(data: number[]): MaturityLevel {
