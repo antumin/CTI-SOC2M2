@@ -8,8 +8,8 @@ import { capabilities, Capability, CapabilityLevel, capabilityLevels, MaturityLe
 })
 export class DataService {
   public data = [];
-  public maturityLevel = 0;
-  public maturity = maturityLevels[0].name;
+  public maturityLevel = MaturityLevel.None;
+  public maturity = maturityLevels[this.maturityLevel].name;
   public capabilities = capabilities;
   public levels = capabilityLevels;
   public dataChange = new BehaviorSubject(this.data);
@@ -25,7 +25,6 @@ export class DataService {
     this.dataChange.next(this.data);
     this.maturityLevel = this.calculateMaturity(this.data);
     this.maturity = maturityLevels[Math.round(this.maturityLevel)].name;
-    console.log(this.maturityLevel)
   }
 
   private calculateMaturity(data: number[]): MaturityLevel {

@@ -49,7 +49,6 @@ export class OutputComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.dataChange.subscribe((data)=>{
-      console.log("updating");
       let values: number[] = [];
       data.forEach((value)=>{
         values.push(value);

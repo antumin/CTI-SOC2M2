@@ -47,27 +47,27 @@ export enum CapabilityLevel{
 export const capabilityLevels = [
     {
         name: 'Undefined',
-        explanation: '',
+        question: 'CTI and CTI formats have not yet been considered.',
         color: '#eb4034'
     },{
         name: 'Source',
-        explanation: 'Have you determined and assessed the source of CTI with the mentioned CTI format(s)?',
+        question: 'Have you determined and assessed the source of CTI with the mentioned CTI format(s)?',
         color: '#eb4034'
     },{
         name: 'Quality',
-        explanation: 'Have you applied appropriate measures to assess the quality of the CTI structured with the mentioned CTI format(s)?',
+        question: 'Have you applied appropriate measures to assess the quality of the CTI structured with the mentioned CTI format(s)?',
         color: '#eb8f34'
     },{
         name: 'Integration',
-        explanation: 'Have you integrated the CTI and the mentioned CTI format(s) into your organizational processes and technology architecture?',
+        question: 'Have you integrated the CTI and the mentioned CTI format(s) into your organizational processes and technology architecture?',
         color: '#dfeb34'
     },{
         name: 'Automation',
-        explanation: 'Have you automated retrieval, use and dissemination of CTI based on the mentioned CTI format(s)?',
+        question: 'Have you automated retrieval, use and dissemination of CTI based on the mentioned CTI format(s)?',
         color: '#b4eb34'
     },{
         name: 'Improvement',
-        explanation: 'Have you set-up a continuous improvement mechanism to cope with new developments within CTI and new CTI format(s)?',
+        question: 'Have you set-up a continuous improvement mechanism to cope with new developments within CTI and new CTI format(s)?',
         color: '#3aeb34'
     },
 ]
@@ -98,7 +98,7 @@ export const maturityLevels = [
         explanation: '',
         kind: MaturityLevel.Extended
     },{
-        name: 'Proficient',
+        name: 'Visionary',
         explanation: '',
         kind: MaturityLevel.Visionary
     }
