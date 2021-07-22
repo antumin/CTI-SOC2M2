@@ -28,7 +28,7 @@ ng serve
 ### Usage
 Open your web browser and navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-### Used in the following research projects TODO: Link hinterlegen
+### Used in the following research projects TODO: Link
 [CTI-SOC2M2 – The quest for mature, intelligence-driven security operations and incident response capabilities (2021)]()
 
 ### About the project 
