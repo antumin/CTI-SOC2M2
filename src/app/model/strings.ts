@@ -10,7 +10,7 @@ export enum Capability{
 export const capabilities = [
     {
         name: 'Vulnerability Management',
-        explanation: 'Existing vulnerabilities define threats to information systems and IT infrastructure. Vulnerability management is part of different maturity models, industry standards, and SOC research. However, as vulnerability management deals with an adequate handling of \emph{known} vulnerabilities, it is a SOC capability influenced by CTI \citep{chismon2015threat}. Therefore, maturity assessment must consider relevant CTI formats and sources such as exploit and vulnerability databases. Applicable CTI formats to vulnerability management cover both security enumerations and scoring systems. They provide a common understanding, reference, and assessment of vulnerability severity to guide decision-making. Additionally, vulnerabilities relate to IT assets.',
+        explanation: 'Existing vulnerabilities define threats to information systems and IT infrastructure. Vulnerability management is part of different maturity models, industry standards, and SOC research. However, as vulnerability management deals with an adequate handling of known vulnerabilities, it is a SOC capability influenced by CTI. Therefore, maturity assessment must consider relevant CTI formats and sources such as exploit and vulnerability databases. Applicable CTI formats to vulnerability management cover both security enumerations and scoring systems. They provide a common understanding, reference, and assessment of vulnerability severity to guide decision-making. Additionally, vulnerabilities relate to IT assets.',
         kind: Capability.VulnerabilityManagement
     },{
         name: 'Log and Event Management',
@@ -18,7 +18,7 @@ export const capabilities = [
         kind: Capability.LogAndEventManagement
     },{
         name: 'Security Monitoring, Analysis & Threat Detection',
-        explanation: 'Security monitoring is a continuous approach to ensure an organization\'s security goals. At the center of a SOC, security monitoring copes with an aggregate view of IT assets and their security. In conjunction with security monitoring, security analysis and threat detection can yield additional insights into specific security aspects and identify threats. While it is possible to conduct security monitoring, analysis, and threat detection without threat intelligence, the general threat landscape can provide essential clues. Contrasted with CTI on current malware, command and control servers, and ongoing cyberattacks, variations witnessed in network traffic and system behavior allow organizations to initiate appropriate follow-up steps. CTI formats applicable for this SOC capability mainly include information on IoC. Exemplary for additional CTI, we also list the MITRE ATT\&CK framework and the comprehensive STIX format.',
+        explanation: 'Security monitoring is a continuous approach to ensure an organization`s security goals. At the center of a SOC, security monitoring copes with an aggregate view of IT assets and their security. In conjunction with security monitoring, security analysis and threat detection can yield additional insights into specific security aspects and identify threats. While it is possible to conduct security monitoring, analysis, and threat detection without threat intelligence, the general threat landscape can provide essential clues. Contrasted with CTI on current malware, command and control servers, and ongoing cyberattacks, variations witnessed in network traffic and system behavior allow organizations to initiate appropriate follow-up steps. CTI formats applicable for this SOC capability mainly include information on IoC. Exemplary for additional CTI, we also list the MITRE ATT&CK framework and the comprehensive STIX format.',
         kind: Capability.SecurityMonitoringAnalysisTrheatDetection
     },{
         name: 'Threat Hunting, Penetration Testing & Digital Forensics',
@@ -26,7 +26,7 @@ export const capabilities = [
         kind: Capability.ThreatHuntingPenetrationTestingDigitalForensics
     },{
         name: 'Security Incident Management & Incident Response',
-        explanation: 'A security incident may have various causes potentially leading to harm for an organization. As a security incident is a type of event that violates security policies, it is essential to manage security incidents and respond with appropriate measures. One aspect of managing is incident triage leading to a prioritization of actions based, for example, on impact or available resources. The greater concept of security incident management and incident response is currently gaining momentum. A variety of dedicated \emph{Security Orchestration, Automation and Response (SOAR)} systems \citep{Gartner.SOAR2020} and the underlying incident response standardization aim to establish a more efficient approach. Besides, for incident response training, cyber ranges are discussed. Thus, combined with existing ticketing systems, it becomes necessary to consider CTI formats centering on CoAs to support these use cases.',
+        explanation: 'A security incident may have various causes potentially leading to harm for an organization. As a security incident is a type of event that violates security policies, it is essential to manage security incidents and respond with appropriate measures. One aspect of managing is incident triage leading to a prioritization of actions based, for example, on impact or available resources. The greater concept of security incident management and incident response is currently gaining momentum. A variety of dedicated Security Orchestration, Automation and Response (SOAR) systems and the underlying incident response standardization aim to establish a more efficient approach. Besides, for incident response training, cyber ranges are discussed. Thus, combined with existing ticketing systems, it becomes necessary to consider CTI formats centering on CoAs to support these use cases.',
         kind: Capability.SecurityIncidentManagementIncidentResponse
     },{
         name: 'Core Cyber Threat Intelligence',
@@ -41,7 +41,7 @@ export enum CapabilityLevel{
     Quality,
     Integration,
     Automation,
-    Improvement
+    Augmentation
 }
 
 export const capabilityLevels = [
@@ -66,8 +66,8 @@ export const capabilityLevels = [
         question: 'Have you automated retrieval, use and dissemination of CTI based on the mentioned CTI format(s)?',
         color: '#b4eb34'
     },{
-        name: 'Improvement',
-        question: 'Have you set-up a continuous improvement mechanism to cope with new developments within CTI and new CTI format(s)?',
+        name: 'Augmentation',
+        question: 'Have you set-up a monitoring mechanism to cope with new developments within CTI and new CTI format(s)?',
         color: '#3aeb34'
     },
 ]
