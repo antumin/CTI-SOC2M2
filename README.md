@@ -28,8 +28,8 @@ ng serve
 ### Usage
 Open your web browser and navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-### Used in the following research projects TODO: Link
-[CTI-SOC2M2 – The quest for mature, intelligence-driven security operations and incident response capabilities (2021)]()
+### Used in the following research projects
+[CTI-SOC2M2 – The quest for mature, intelligence-driven security operations and incident response capabilities (2021)](https://www.sciencedirect.com/science/article/pii/S0167404821003060)
 
 ### About the project 
 
